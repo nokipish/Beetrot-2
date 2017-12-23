@@ -1,5 +1,9 @@
 body {
-
+  overflow-x: hidden;
+  min-width: 320px;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .wrapper {
@@ -7,6 +11,29 @@ body {
   max-width: 1170px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.btn {
+  // display: block;
+  // margin: 0 auto;
+  height: 40px;
+  width: auto;
+  padding: 0 20px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn--green {
+  border-color: #48bf72;
+  color: #48bf72;
+}
+
+.btn--green:hover {
+  background-color: #48bf72;
+  color: #fff;
 }
 
 /* Main Screen */
@@ -24,29 +51,33 @@ body {
   overflow: hidden;
 }
 
-.logo {
+.header__logo {
   float: left;
 }
 
-.nav {
+.header__nav {
   float: right;
   height: 99px;
   line-height: 99px;
 }
 
-.nav-link {
+.nav__link {
   color: #fff;
   font-size: 16px;
   padding: 0 50px;
   position: relative;
 }
+.nav__link--active,
+.nav__link:hover {
+  color: #48bf72;
+}
 
-.nav-link:last-of-type {
+.nav__link:last-of-type {
   padding-right: 0;
   position: static;
 }
 
-.nav-link:after {
+.nav__link:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -60,14 +91,215 @@ body {
 .main-section {
   text-align: center;
   text-transform: uppercase;
+  color: #fff;
 }
 
-.main-section-title {
+.main-section__title {
   font-size: 46px;
   font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.main-section__text {
+  font-size: 30px;
+  margin-bottom: 43px;
+}
+
+.main-section__btn {
+  
 }
 
 /* Section gallery */
 .section-gallery {
-  // min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+.gallery__btn-controls {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.btn-controls__btn {
+  margin: 0 8px;
+  height: 32px;
+  padding: 0 15px;
+  border-radius: 3px;
+  color: #3c4955;
+  font-size: 16px;
+  background-color: #eee;
+  font-weight: bold;
+}
+
+.btn-controls__btn--active,
+.btn-controls__btn:hover {
+  color: #fff;
+  background-color: #48bf72;
+}
+
+.gallery__list {
+  overflow: hidden;
+}
+
+.gallery__column {
+  float: left;
+  width: 450px;
+}
+
+.gallery__column--large {
+  float: right;
+  width: 650px;
+}
+
+.gallery__item {
+  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery__item:hover > .overlay {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.gallery__item img {
+  // max-width: 100%;
+  // height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+// @supports (object-fit: cover) {
+//   .gallery__item img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// }
+
+
+
+.gallery__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.gallery__item--size-1 {
+  height: 300px;
+}
+
+.gallery__item--size-2 {
+  height: 490px;
+}
+
+.gallery__item--size-3 {
+  height: 440px;
+}
+
+.gallery__item--size-4 {
+  height: 350px;
+}
+
+.gallery__item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(72, 191, 114, 0.9);
+  text-align: center;
+  color: #fff;
+  // display: flex;
+  // align-items: center;
+  // flex-direction: column;
+  // justify-content: center;
+  display: table;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.gallery__item-overlay > div {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.overlay__title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.overlay__subtitle {
+  font-size: 16px;
+}
+
+/* FORM */
+.section-form {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.section-form__wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-form__title {
+  font-size: 26px;
+  color: #48bf72;
+  margin-bottom: 50px;
+}
+
+.section-form__form {
+  width: 100%;
+}
+
+.form__field {
+  height: 50px;
+  border: 2px solid #3c4955;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form__icon-field {
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #3c4955;
+  color: #fff;
+  font-size: 24px;
+}
+
+.form__icon-field:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    background-color: #3c4955;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+.form__field--textarea {
+  height: 200px;
+}
+
+
+.form__field > input {
+  padding: 0 25px 0 75px;
+  font-size: 16px;
+}
+
+.form__field > textarea {
+  padding: 10px 25px 10px 75px;
+  font-size: 16px;
 }

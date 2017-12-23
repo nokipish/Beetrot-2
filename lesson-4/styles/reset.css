@@ -8,4 +8,25 @@
 
 a {
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+img {
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  resize: none;
 }
